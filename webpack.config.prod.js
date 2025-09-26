@@ -1,27 +1,28 @@
-const path =require('path');
+const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-module.exports ={
+module.exports = {
   //Where to read where to output
-  entry:'./src/demo/index.js',
+  entry: './src/demo/index.js',
   resolve: {
     alias: {
       libs: path.resolve(__dirname, 'src/lib/'),
-      pages: path.resolve(__dirname, 'src/demo/pages')
+      pages: path.resolve(__dirname, 'src/demo/pages'),
+      'react-sizeme': path.resolve(__dirname, 'node_modules/react-sizeme')
     }
   },
-  output:{
-    path:path.resolve('docs'),
-    filename:'webpack-bundle.js'
+  output: {
+    path: path.resolve('docs'),
+    filename: 'webpack-bundle.js'
   },
-  devServer:{
-    inline:true,
-    contentBase:'./docs',
-    port:4444,
+  devServer: {
+    inline: true,
+    contentBase: './docs',
+    port: 4444,
     historyApiFallback: true,
   }
   ,
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -33,7 +34,7 @@ module.exports ={
         test: /\.css$/,
         exclude: /node_modules/,
         use: ["style-loader", "css-loader"]
-       },
+      },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         exclude: /node_modules/,
