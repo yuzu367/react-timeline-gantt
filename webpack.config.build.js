@@ -33,12 +33,6 @@ module.exports = {
       amd: "ReactDOM",
       root: "ReactDOM"
     },
-    "react-sizeme": {
-      commonjs: "react-sizeme",
-      commonjs2: "react-sizeme",
-      amd: "ReactDOM",
-      root: "ReactDOM"
-    },
     moment: {
       commonjs: "moment",
       commonjs2: "moment",
