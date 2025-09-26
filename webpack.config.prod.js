@@ -7,7 +7,6 @@ module.exports = {
     alias: {
       libs: path.resolve(__dirname, 'src/lib/'),
       pages: path.resolve(__dirname, 'src/demo/pages'),
-      'react-sizeme': path.resolve(__dirname, 'node_modules/react-sizeme')
     }
   },
   output: {
