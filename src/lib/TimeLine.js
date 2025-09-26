@@ -108,7 +108,7 @@ class TimeLine extends Component {
     let rowInfo = this.calculateStartEndRows(this.state.numVisibleRows, this.props.data, scrollTop);
     if (rowInfo.start !== this.state.start) {
       this.setState(
-       {
+        {
           scrollTop: scrollTop,
           startRow: rowInfo.start,
           endRow: rowInfo.end
@@ -162,7 +162,7 @@ class TimeLine extends Component {
     //Got you
     this.setStartEnd();
     this.setState(
-       {
+      {
         currentday: currentIndx,
         nowposition: new_nowposition,
         headerData: headerData,
@@ -319,14 +319,14 @@ class TimeLine extends Component {
     this.checkMode();
     this.checkNeeeData();
     console.log('On render')
-    if(!this.state.size){
+    if (!this.state.size) {
       console.log(this.state)
     }
     return (
       <div className="timeLine">
         <div className="timeLine-side-main" style={this.state.sideStyle}>
           <TaskList
-            ref="taskViewPort"
+            ref={this.taskViewPortRef}
             itemheight={this.props.itemheight}
             startRow={this.state.startRow}
             endRow={this.state.endRow}
@@ -350,7 +350,7 @@ class TimeLine extends Component {
             scrollLeft={this.state.scrollLeft}
           />
           <DataViewPort
-            ref="dataViewPort"
+            ref={this.DataViewPortRef}
             scrollLeft={this.state.scrollLeft}
             scrollTop={this.state.scrollTop}
             itemheight={this.props.itemheight}
@@ -395,7 +395,6 @@ class TimeLine extends Component {
             selectedItem={this.props.selectedItem}
             onSelectItem={this.onSelectItem}
             itemheight={this.props.itemheight}
-            onSelectItem={this.onSelectItem}
             links={this.props.links}
           />
         </div>

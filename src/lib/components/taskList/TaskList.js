@@ -16,6 +16,7 @@ export class VerticalLine extends Component {
 export class TaskRow extends Component {
   constructor(props) {
     super(props);
+    this.taskViewPortRef = React.createRef();
   }
 
   onChange = (value) => {
@@ -83,7 +84,7 @@ export default class TaskList extends Component {
   }
 
   doScroll = () => {
-    this.props.onScroll(this.refs.taskViewPort.scrollTop);
+    this.props.onScroll(this.taskViewPortRef.current.scrollTop);
   };
 
   render() {
@@ -94,7 +95,7 @@ export default class TaskList extends Component {
         <div className="timeLine-side-title" style={Config.values.taskList.title.style}>
           <div>{Config.values.taskList.title.label}</div>
         </div>
-        <div ref="taskViewPort" className="timeLine-side-task-viewPort" onScroll={this.doScroll}>
+        <div ref={this.taskViewPortRef} className="timeLine-side-task-viewPort" onScroll={this.doScroll}>
           <div className="timeLine-side-task-container" style={this.containerStyle}>
             {this.renderTaskRow(data)}
           </div>
