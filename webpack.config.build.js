@@ -15,7 +15,7 @@ module.exports = {
       'moment': path.resolve(__dirname, './node_modules/moment'),
       'react': path.resolve(__dirname, './node_modules/react'),
       'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-      'react-sizeme': path.resolve(__dirname, './node_modules/react-sizeme'),
+      'react-sizeme': path.resolve(__dirname, '../../react-sizeme'),
       libs: path.resolve(__dirname, 'src/lib/'),
     },
     modules: [
